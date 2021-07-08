@@ -1,0 +1,9 @@
+li{
+    position: relative;
+    background-color: rgb(247, 247, 247);
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}

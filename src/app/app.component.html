@@ -1,0 +1,14 @@
+<h1>Практика</h1>
+<nav>
+    <a (click)= "clickIncome()">Доходы</a>
+    <a (click)= "clickOutcome()" >Расходы</a>
+    <a (click)="clickAssets()">Активы</a>
+    <a (click)="clickLiabilities()">Обязательства</a>
+    <a (click)="clickCapital()">Капитал</a>
+</nav>
+
+<app-outcome *ngIf="visibilityOutcome"></app-outcome>
+<app-income *ngIf="visibilityIncome"></app-income>
+<app-assets *ngIf="visibilityAssets"></app-assets>
+<app-liabilities *ngIf="visibilityLiabilities"></app-liabilities>
+<app-capital *ngIf="visibilityCapital"></app-capital>

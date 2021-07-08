@@ -1,0 +1,28 @@
+<p>income works!
+</p>
+<!--<ul *ngFor = "let i of incomeData">
+    <li *ngIf = "i.parentOperationCategoryId == idIncome">
+        <p>Title: {{i.title}}</p>
+
+            <ul *ngFor = "let key of incomeData">
+                <li 
+                *ngIf ="i.operationCategoryId == key.parentOperationCategoryId">
+                    <p>Title: {{key.title}}</p>
+                    <app-tree-node [incomeDate] = "incomeData"></app-tree-node>
+                </li>
+            </ul>
+    </li>
+</ul>
+-->
+<ul *ngFor = "let i of incomeData">
+    <li *ngIf = "i.parentOperationCategoryId == idIncome">
+        <p>Title: {{i.title}}<button (click)="deleteNode(i)">x</button></p>
+        <ul *ngFor = "let key of incomeData">
+            <li 
+            *ngIf ="i.operationCategoryId == key.parentOperationCategoryId">
+                <app-tree-node [Date] = "incomeData"
+                                [incomeKeyIdData] = "key.operationCategoryId"></app-tree-node>
+            </li>
+        </ul>
+    </li>
+</ul>

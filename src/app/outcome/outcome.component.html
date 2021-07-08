@@ -1,0 +1,46 @@
+<p>outcome works!</p>
+<!--<ul *ngFor = "let i of outDate">
+    <li *ngIf = "i.parentOperationCategoryId == idOutcome">
+        <p>Title: {{i.title}}</p>
+            <p>
+                {{i.operationCategoryType}}
+                {{i.parentOperationCategoryId}}
+                {{i.operationCategoryId}}
+            </p>
+            <ul *ngFor = "let key of outDate">
+                <li 
+                *ngIf ="i.operationCategoryId == key.parentOperationCategoryId">
+                    <p>Title: {{key.title}}</p>
+                    <p>
+                        {{key.operationCategoryType}}
+                        {{key.parentOperationCategoryId}}
+                        {{key.operationCategoryId}}
+                    </p>
+                    <ul *ngFor = "let zz of outDate">
+                        <li 
+                        *ngIf ="key.operationCategoryId == zz.parentOperationCategoryId">
+                            <p>Title: {{zz.title}}</p>
+                            <p>
+                                {{zz.operationCategoryType}}
+                                {{zz.parentOperationCategoryId}}
+                                {{zz.operationCategoryId}}
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    </li>
+</ul
+-->
+<ul *ngFor = "let i of outDate">
+    <li *ngIf = "i.parentOperationCategoryId == idOutcome">
+        <p>Title: {{i.title}}<button (click)="deleteNode(i)">x</button></p>
+        <ul *ngFor = "let key of outDate">
+            <li 
+            *ngIf ="i.operationCategoryId == key.parentOperationCategoryId">
+                <app-tree-node [Date] = "outDate"
+                                [incomeKeyIdData] = "key.operationCategoryId"></app-tree-node>
+            </li>
+        </ul>
+    </li>
+</ul>

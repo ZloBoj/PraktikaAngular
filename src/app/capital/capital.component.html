@@ -1,0 +1,12 @@
+<ul *ngFor = "let i of capitalData">
+    <li *ngIf = "i.parentOperationCategoryId == idCapital">
+        <p>Title: {{i.title}} <button (click)="deleteNode(i)">x</button></p>
+        <ul *ngFor = "let key of capitalData">
+            <li 
+            *ngIf ="i.operationCategoryId == key.parentOperationCategoryId">
+                <app-tree-node [Date] = "capitalData"
+                                [incomeKeyIdData] = "key.operationCategoryId"></app-tree-node>
+            </li>
+        </ul>
+    </li>
+</ul>
